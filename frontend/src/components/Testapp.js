@@ -12,8 +12,7 @@ const contract = new ethers.Contract(
 );
 console.log(contract);
 
-const Testapp = (account) => {
-  console.log(account);
+const Testapp = () => {
   //admin rate set
   const [isAdmin, setIsAdmin] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
@@ -21,7 +20,7 @@ const Testapp = (account) => {
 
   const getData = async () => {
     const owner = contract.owner();
-    console.log("owner", owner);
+    console.log(owner);
     const _noImpactContFee = await contract.getNoImpactContFee();
     console.log(_noImpactContFee.toString());
   };
@@ -37,7 +36,7 @@ const Testapp = (account) => {
           <fieldset>
             <label>
               <p>Name</p>
-              <input name="name" value={account.account} />
+              <input name="name" />
             </label>
           </fieldset>
           <button type="submit">Submit</button>
